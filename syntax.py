@@ -18,7 +18,5 @@ is_programmer = True
 
 print(f"Hi, I am {name}. I am {age} years old and my height is {height}.")
 
-
 print(f"{name} is a { 'programmer' if is_programmer else 'person'}")
 
-print("{} is a {}".format(name, "programmer" if is_programmer else "person"))

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Django App{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+  </head>
+  <body class="bg-gray-100 text-gray-800 h-screen flex flex-col">
+    <nav class="bg-white rounded-b-2xl p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="text-xl font-semibold">DjangoApp</a>
+        <ul class="flex gap-4 text-gray-600">
+          <li>
+            <a href="{% url 'home' %}" class="hover:text-gray-900">Home</a>
+          </li>
+          <li>
+            <a href="{% url 'about' %}" class="hover:text-gray-900">About</a>
+          </li>
+          <li>
+            <a href="{% url 'contact' %}" class="hover:text-gray-900"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div
+      class="container mx-auto flex-grow flex items-center justify-center p-6"
+    >
+      {% block content %} {% endblock %}
+    </div>
+
+    <footer class="bg-white rounded-t-2xl text-center p-4 text-gray-600">
+      <p>&copy; 2024 DjangoApp</p>
+    </footer>
+  </body>
+</html>
